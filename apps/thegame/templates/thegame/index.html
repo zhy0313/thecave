@@ -2,11 +2,49 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> Index </title>
+    <title> Login Page </title>
+
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
+
   <body>
-    <h1> Hello World! </h1>
+    <div id="wrapper">
+
+      <h2> Welcome! </h2>
+      <div id='top'>
+        <h2> Login: </h2>
+        <form action="/login" method="post">{% csrf_token %}
+          <p><label for='1'> Alias:<input type="text" name='alias'></label></p>
+          <p><label for='2'> Password :<input type="password" name='password'></label></p>
+          <p><input type="submit" value='Login'></p>
+        </form>
+      </div>
+
+      <div id='bottom'>
+        <h2> Register: </h2>
+        <form action="/register" method="post">{% csrf_token %}
+          <p><label for='3'> Name: <input type="text" name='reg_name'></label></p>
+          <p><label for='4'> Alias: <input type="text" name='reg_alias'></label></p>
+          <p><label for='4'> Email: <input type="text" name='email'></label></p>
+          <p><label for='6'> Password: <input type="password" name='reg_password'></label></p>
+          <p><label for='7'> Confirm Password: <input type="password" name='reg_password2'></label></p>
+          <p><label for='8'> Birthdate: <input type="date" name='birthdate'></label></p>
+          <p><input type="submit" value='Register'></p>
+        </form>
+      </div>
+
+      <!-- Posts messages if there are errors -->
+      {% if messages %}
+        <div id="warning">
+            <ul class="list">
+                {% for message in messages %}
+                  <li class="red">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+      {% endif %}
+
+    </div>
   </body>
 </html>

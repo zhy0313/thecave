@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Index </title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+
+    <div id="top">
+      <h1> Current Users: </h1>
+      <table>
+          <tr>
+            <th> User ID </th>
+            <th> User Name </th>
+            <th> Alias </th>
+            <th> Email </th>
+            <th> DOB </th>
+        </tr>
+        <tr>
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.alias}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.birthdate}}</td>
+        </tr>
+      </table>
+    </div>
+
+  </body>
+</html>
