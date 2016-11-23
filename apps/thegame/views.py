@@ -1,20 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Usermanager, User
+from .models import UserManager, User
 
 def index(request):
-    return render(request, "thecave/index.html")
+    return render(request, "thegame/index.html")
 
 def register(request):
-    if UserManager.isValid(request.POST, request):
-        valid == True
-        return redirect('/')
-    else:
-        return redirect('/')
+    User.objects.register(request)
+    return redirect('/')
 
 def login(request):
-    if UserManager.userLogin(request.POST, request):
-        valid == True
+    if User.objects.userLogin(request):
         return redirect('/home')
     else:
         return redirect('/')
@@ -26,4 +22,4 @@ def home(request):
     context = {
     'users': users,
     }
-    return render(request, "thecave/homepage.html", context)
+    return render(request, "thegame/homepage.html", context)
