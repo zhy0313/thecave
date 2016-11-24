@@ -17,9 +17,7 @@ class UserManager(models.Manager):
         name = request.POST['reg_name']
         alias = request.POST['reg_alias']
         email = request.POST['email']
-        print request.POST['birthdate']
         today = datetime.today()
-        print today
         reg_password = request.POST['reg_password']
         reg_password2 = request.POST['reg_password2']
         regex = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
