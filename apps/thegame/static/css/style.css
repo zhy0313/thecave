@@ -13,6 +13,7 @@
   margin: 10px auto;
 }
 
+
 .red {
   color: red;
   list-style: none;
@@ -52,4 +53,9 @@ table, th, td {
 }
 tr:nth-child(even) {
   background-color: #f2f2f2
+}
+
+.buttons form {
+  display: inline-block;
+  margin-left: 150px;
 }
