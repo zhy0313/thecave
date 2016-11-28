@@ -3,11 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title> The Cave </title>
+
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src='http://use.edgefonts.net/nosifer.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $(".blood").hide();
+    $('.warning').hover(function(){
+        $(".blood").toggle();
+      });
+    });
+    </script>
+
       <style>
-        #blood {
+        .blood {
           font-family: nosifer;
           color: red;
         }
@@ -16,42 +28,52 @@
           width: 600px;
         }
       </style>
+
   </head>
+
   <body>
 
-    <div id='top'>
+    <div id='cave'>
 
-      <h2> Weclome to Cave {{cave}} </h2>
+      {% if cave %}
+      <h2> You are in Cave {{cave}} </h2>
+      {% else %}
+      <h2> Welcome to the Cave! </h2>
+      {% endif %}
+      <hr>
 
-      <div id='blood'>
+      <h4 class='warning'> You see a message written in blood on the wall,</h4>
+      <h4 class='warning'>Hover your mouse to hold your torch up to it.</h4>
+      <div class='blood'>
       {% for content in contents %}
       {{content}}
       {% endfor %}
       <br>
       </div>
+      <hr>
 
       <h3> There is a fork in the cave, do you go left or right? </h3>
       <img src="http://pre08.deviantart.net/ea9c/th/pre/f/2015/012/d/0/fork_in_the_cave_by_churg-d8dnknh.png" alt="" />
 
       <div class='buttons'>
-        <form class="" action="/action" method="post">{%csrf_token%}
+        <form class="" action="/spelunk" method="post">{%csrf_token%}
           <input type="hidden" name="direction" value="left">
           <input type="submit" name="name" value="Go Left!">
         </form>
 
-        <form class="" action="/action" method="post">{%csrf_token%}
+        <form class="" action="/spelunk" method="post">{%csrf_token%}
             <input type="hidden" name="direction" value="right">
           <input type="submit" name="name" value="Go Right!">
         </form>
       </div>
 
-      <a href="/logout"> Quit </a>
 
     </div>
 
     <div id='bottom'>
       Your Gold: <input type="text" name="gold" value="{{gold}}">
       Your Health: <input type="text" name="gold" value="{{health}}">
+      <br> <a href="/logout"> Quit </a>
     </div>
 
   </body>

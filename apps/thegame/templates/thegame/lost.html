@@ -3,16 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title> Game Over </title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
+    <div id="lost">
+
     <h1> You died! </h1>
 
     <a href="/home"> <img src="https://media.giphy.com/media/QdOsj79GMmTm0/giphy.gif" alt="" /></a> <br>
 
-      Total Gold: <input type="text" name="gold" value="{{gold}}">
-      Total Caves Walked: <input type="text" name="gold" value="{{cave}}">
-      Score: <input type="text" name="gold" value="{{highscore}}"> <br>
 
-      <a href="/home"> Play Again </a>
+    <div class="scores">
+      Total Gold: <input type="text" name="gold" value="{{gold}}"> <br>
+      Total Caves Walked: <input type="text" name="gold" value="{{cave}}"> <br>
+      Score: <input type="text" name="gold" value="{{highscore}}"> <br>
+    </div>
+
+    </div>
   </body>
 </html>

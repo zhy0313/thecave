@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'login$', views.login),
     url(r'enter$', views.enter),
     url(r'cave$', views.cave),
-    url(r'action$', views.action),
+    url(r'spelunk$', views.action),
     url(r'logout$', views.logout),
     url(r'lost$', views.lost),
     url(r'home$', views.home)

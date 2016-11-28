@@ -2,15 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> Index </title>
+    <title> Highscores </title>
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
 
-    <div id="top">
+    <div id="home">
       <h1> Highscores: </h1>
-      <a href="/logout"> Logout </a>
 
       <table>
           <tr>
@@ -23,9 +22,20 @@
           <td>{{user.highscore}}</td>
         </tr>
         {% endfor %}
-      </table>
+      </table><br>
 
-      <a href="/enter"> Start the game </a>
+      <h3> Instructions: </h3>
+      <ul>
+        <li> The aim of the game to spelunk, </li>
+        <li>  You walk into a cave and can choose left or right, </li>
+        <li>  Along the way you will find gold (increasing your score),</li>
+        <li>  Walking forward causes you to lose health (fatigue),</li>
+        <li>  The game ends when you run out of health, </li>
+        <li>  You must continue to play until you die to save your highscore! </li>
+      </ul><br>
+
+      <a href="/enter"> Enter the Cave! </a> <br>
+      <br> <a href="/logout"> Logout </a> <br>
 
     </div>
 

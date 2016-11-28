@@ -27,6 +27,44 @@
   background: linear-gradient(to bottom, #eeeeee 0%,#eeeeee 100%);
 }
 
+#home{
+  text-align: center;
+  width: 600px;
+  margin: 10px auto;
+  padding: 5px;
+  border: 1px solid black;
+  background: linear-gradient(to bottom, #eeeeee 0%,#eeeeee 100%);
+}
+
+#cave{
+  text-align: center;
+  color: white;
+  width: 600px;
+  margin: 10px auto;
+  padding: 5px;
+  border: 1px solid black;
+  background: linear-gradient(to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+}
+
+
+#lost{
+  width: 600px;
+  margin: 10px auto;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+}
+
+.scores{
+  text-align: right;
+}
+
+#lost a {
+  text-decoration: none;
+  background-color: black;
+  border: none;
+  margin-left: -1px;
+}
 
 #bottom{
   width: 600px;
@@ -47,12 +85,21 @@ label {
   float: right;
 }
 
+ul {
+  list-style-type: none;
+}
 
 table, th, td {
    border: 1px solid black;
+   margin: 0px auto;
 }
+
 tr:nth-child(even) {
-  background-color: #f2f2f2
+  background-color: white;
+}
+
+.buttons {
+  width: 500px;
 }
 
 .buttons form {
