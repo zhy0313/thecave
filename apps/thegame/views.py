@@ -29,7 +29,8 @@ def login(request):
 
 
 def home(request):
-    users = User.objects.all()
+    users = User.objects.all().order_by('-highscore')
+
     request.session['health'] = 100
     request.session['gold'] = 0
     request.session['cave'] = 1
@@ -72,9 +73,17 @@ def action(request):
         return render(request, "thegame/cave.html", context)
 
 def lost(request):
+    score = int(request.session['gold']) + 5*int((request.session['cave']))
+    currentuser = User.objects.get(id = request.session['user_id'])
+    if currentuser.highscore < score:
+        User.objects.filter(id = request.session['user_id']).update(highscore= score)
+    else:
+        pass
+
     context = {
     'gold': request.session['gold'],
     'cave': request.session['cave'],
+    'highscore': score,
     }
     return render(request, "thegame/lost.html", context)
 

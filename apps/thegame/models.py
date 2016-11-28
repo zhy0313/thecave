@@ -100,6 +100,7 @@ class User(models.Model):
       email = models.CharField(max_length=45, default='')
       password = models.CharField(max_length=200, default='')
       birthdate = models.DateField()
+      highscore = models.IntegerField(default=0)
       objects = UserManager()
 
 class MarkovChain:

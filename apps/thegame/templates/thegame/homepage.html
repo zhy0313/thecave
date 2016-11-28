@@ -14,19 +14,13 @@
 
       <table>
           <tr>
-            <th> User ID </th>
-            <th> User Name </th>
             <th> Alias </th>
-            <th> Email </th>
-            <th> DOB </th>
-        </tr>
+            <th> highscore </th>
+          </tr>
         {% for user in users %}
         <tr>
-          <td>{{user.id}}</td>
-          <td>{{user.name}}</td>
           <td>{{user.alias}}</td>
-          <td>{{user.email}}</td>
-          <td>{{user.birthdate}}</td>
+          <td>{{user.highscore}}</td>
         </tr>
         {% endfor %}
       </table>
